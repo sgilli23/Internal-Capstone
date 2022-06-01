@@ -1,0 +1,65 @@
+<!-- Author: Samantha
+This is the HTML for my webpage. -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Workforce DB</title>
+  </head>
+  <body>
+    <!-- banner -->
+    <div class="banner">
+      <img
+        id="logo"
+        src="https://s.yimg.com/uu/api/res/1.2/JN9Oti5FkSJVnwyxRCpBSA--~B/aD0yMjM7dz01ODA7YXBwaWQ9eXRhY2h5b24-/https://www.blogcdn.com/www.joystiq.com/media/2010/03/aperturesciencelogohistory.jpg"
+      />
+      <h1 id="header">Employee Database</h1>
+    </div>
+    <!-- Categories in a topbar navigation style -->
+    <div class="topNav">
+      <label id="searchLabel">Search by: 🔎</label>
+      <button id="gender">Gender 🌈</button>
+      <button id="status">Status 👍👎</button>
+      <button id="name">Employee 👤</button>
+    </div>
+    <div class="mainBody">
+      <div class="mainBody">
+        <!-- Selectors in a sidebar navigation style -->
+        <div class="sidebarNav">
+          <select id="byGender" disabled>
+            <option id="genDefault" disabled selected="selected">
+              Choose a Gender...
+            </option>
+          </select>
+          <select id="byStatus" disabled>
+            <option id="statDefault" disabled selected="selected">
+              Choose a Status...
+            </option>
+          </select>
+          <select id="byName" disabled>
+            <option id="nameDefault" disabled selected="selected">
+              I know who I want...
+            </option>
+          </select>
+
+          <!-- Reset & Refresh -->
+          <button id="resetBtn" type="reset">Reset Search 🔃</button>
+          <button id="refreshBtn" type="reset">New Random 20 🎲</button>
+        </div>
+
+        <!-- Results -->
+        <div class="results">
+          <h3 id="resultsHead"></h3>
+          <ol id="resultsBody"></ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
