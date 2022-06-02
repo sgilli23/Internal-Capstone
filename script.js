@@ -22,6 +22,7 @@ const nameDefault = document.getElementById(`nameDefault`);
 // HTML: Buttons
 const refreshBtn = document.getElementById(`refreshBtn`);
 const resetBtn = document.getElementById(`resetBtn`);
+const colourBtn = document.getElementById(`colourBtn`);
 const genderBtn = document.getElementById(`gender`);
 const statusBtn = document.getElementById(`status`);
 const nameBtn = document.getElementById(`name`);
@@ -41,33 +42,32 @@ let genderOf = [];
 // ---------- FUNCTIONS ---------- //
 
 // ---------- BUTTONS ---------- //
-// Buttons = Why? Easier on touch than radio - more accessibility - use prev. job as example
 
-// search by gender
+// to search by gender
 genderBtn.addEventListener(`click`, function (e) {
   byGender.removeAttribute(`disabled`);
   disableBtns();
 });
 
-// search by status
+// to search by status
 statusBtn.addEventListener(`click`, function (e) {
   byStatus.removeAttribute(`disabled`);
   disableBtns();
 });
 
-// search by name
+// to search by name
 nameBtn.addEventListener(`click`, function (e) {
   byName.removeAttribute(`disabled`);
   disableBtns();
 });
 
-// refreshes page
+// refreshes page to grab a different selection of 20 employees
 refreshBtn.addEventListener(`click`, function (e) {
   e.preventDefault();
   window.location.reload();
 });
 
-// resets search
+// resets search parameters to star over with same data
 resetBtn.addEventListener(`click`, function (e) {
   e.preventDefault();
   removeData();
@@ -88,6 +88,18 @@ function disableBtns() {
   nameBtn.disabled = `disabled`;
   statusBtn.disabled = `disabled`;
 }
+
+colourBtn.addEventListener(`click`, function (e) {
+  if (colourBtn.textContent === `Light Mode 🌞`) {
+    colourBtn.textContent = `Dark Mode 🌚`;
+    document.querySelector(`body`).style.backgroundColor = "white";
+    document.getElementById(`logo`).style.opacity = 1;
+  } else {
+    colourBtn.textContent = `Light Mode 🌞`;
+    document.querySelector(`body`).style.backgroundColor = "black";
+    document.getElementById(`logo`).style.opacity = 0.7;
+  }
+});
 
 // ---------- EMPLOYEE BY NAME --------- //
 
@@ -135,7 +147,8 @@ const checkGender = function (list) {
       (employee) => employee.gender === selected
     );
     createResult(filterData);
-    resultsHead.textContent = ` These employees identify as ${selected}:`;
+    let counter = filterData.length;
+    resultsHead.textContent = ` ${counter} employees identify as ${selected}:`;
   });
 };
 
@@ -148,13 +161,14 @@ const checkStatus = function (list) {
       (employee) => employee.status === selected
     );
     createResult(filterData);
-    resultsHead.textContent = `These employees are currently shown as ${selected}:`;
+    let counter = filterData.length;
+    resultsHead.textContent = `${counter} employees are currently shown as ${selected}:`;
   });
 };
 
 // -------- GENDER & STATUS: Results -------- //
 
-// displays results
+// grabs employee name from the returned query and displays it in results body
 const displayResult = function (data) {
   const iterator = data.values();
   for (const person of iterator) {
@@ -180,7 +194,7 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// clears data from body
+// clears data from results body
 const removeData = function () {
   while (resultsBody.firstChild) {
     resultsBody.removeChild(resultsBody.firstChild);
@@ -220,5 +234,4 @@ const getData = async function () {
     .catch((error) => console.error("FETCH ERROR:", error));
 };
 
-// LET'S GO
 getData();

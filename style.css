@@ -1,5 +1,5 @@
 /* Author: Samantha
-This is the styling for my webpage. */
+This is the styling for my webpage. Add grids*/
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +28,7 @@ body {
   display: flex;
   width: max-content;
   height: max-content;
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 #header {
@@ -87,17 +87,21 @@ body {
   padding: 5px;
 }
 
-#gender {
+#gender,
+#status,
+#name,
+#colourBtn,
+#resetBtn,
+#refreshBtn {
   font-weight: 600;
   padding: 5px;
 }
 
-#status {
-  font-weight: 600;
-  padding: 5px;
-}
+.footer {
+  width: max-content;
+  height: max-content;
 
-#name {
-  font-weight: 600;
+  gap: 10px;
   padding: 5px;
+  background-color: rgb(206, 206, 206);
 }
