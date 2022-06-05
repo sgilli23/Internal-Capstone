@@ -3,31 +3,31 @@ This is the styling for my webpage. Add grids*/
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: inherit;
-  padding: 0;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-body {
+.container {
+  display: flex;
+  flex-direction: column;
   background-color: black;
+}
+
+#colourBtn {
+  display: flex;
+  align-self: flex-end;
+  right: 10px;
+  width: max-content;
+  background-color: rgb(206, 206, 206);
 }
 
 .banner {
-  background-color: black;
-  flex-direction: column;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
   align-items: center;
-  margin: 20px;
+  background-color: black;
 }
 
 #logo {
-  display: flex;
-  width: max-content;
-  height: max-content;
   opacity: 0.7;
 }
 
@@ -36,50 +36,43 @@ body {
 }
 
 .topNav {
-  flex-direction: row;
   display: flex;
+  flex-direction: row;
+  align-self: center;
   width: max-content;
-  height: max-content;
-  justify-content: center;
-  margin: auto;
   gap: 10px;
   padding: 5px;
+  margin-bottom: 10px;
   background-color: rgb(206, 206, 206);
 }
 
-.mainBody {
-  flex-direction: row;
-  display: flex;
+.mainbody {
+  align-self: center;
+  width: 750px;
+  height: auto;
   margin: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(206, 206, 206);
 }
 
 .sidebarNav {
-  flex-direction: column;
   display: flex;
-  width: max-content;
-  height: max-content;
-  gap: 10px;
-  margin: 10px;
-  padding: 10px;
+  flex-direction: column;
+  align-self: left;
+  gap: 5px;
+  padding: 30px;
   background-color: rgb(206, 206, 206);
 }
 
 .results {
-  flex-direction: column;
-  display: flex;
   align-items: center;
-  margin-top: 10px;
-  padding-bottom: 10px;
-
-  background-color: rgb(206, 206, 206);
-}
-
-#resultsHead {
-  margin-top: 10px;
-}
-
-#resultsBody {
-  margin: 0;
+  align-self: center;
+  justify-content: center;
+  font-size: medium;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 #searchLabel {
@@ -95,13 +88,4 @@ body {
 #refreshBtn {
   font-weight: 600;
   padding: 5px;
-}
-
-.footer {
-  width: max-content;
-  height: max-content;
-
-  gap: 10px;
-  padding: 5px;
-  background-color: rgb(206, 206, 206);
 }

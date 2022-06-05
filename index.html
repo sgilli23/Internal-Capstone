@@ -11,7 +11,8 @@ This is the HTML for my webpage. -->
     <link rel="stylesheet" href="style.css" />
     <title>Workforce DB</title>
   </head>
-  <body>
+  <body class="container">
+    <button id="colourBtn">Light Mode 🌞</button>
     <!-- banner -->
     <div class="banner">
       <img
@@ -27,39 +28,35 @@ This is the HTML for my webpage. -->
       <button id="status">Status 👍👎</button>
       <button id="name">Employee 👤</button>
     </div>
-    <div class="mainBody">
-      <div class="mainBody">
-        <!-- Selectors in a sidebar navigation style -->
-        <div class="sidebarNav">
-          <select id="byGender" disabled>
-            <option id="genDefault" disabled selected="selected">
-              Choose a Gender...
-            </option>
-          </select>
-          <select id="byStatus" disabled>
-            <option id="statDefault" disabled selected="selected">
-              Choose a Status...
-            </option>
-          </select>
-          <select id="byName" disabled>
-            <option id="nameDefault" disabled selected="selected">
-              I know who I want...
-            </option>
-          </select>
 
-          <!-- Reset & Refresh -->
-          <button id="resetBtn" type="reset">Reset Search 🔃</button>
-          <button id="refreshBtn" type="reset">Random 20 🎲</button>
-        </div>
+    <div class="mainbody">
+      <!-- Selectors in a sidebar navigation style -->
+      <div class="sidebarNav">
+        <select id="byGender" disabled>
+          <option id="genDefault" disabled selected="selected">
+            Choose a Gender...
+          </option>
+        </select>
+        <select id="byStatus" disabled>
+          <option id="statDefault" disabled selected="selected">
+            Choose a Status...
+          </option>
+        </select>
+        <select id="byName" disabled>
+          <option id="nameDefault" disabled selected="selected">
+            I know who I want...
+          </option>
+        </select>
 
-        <!-- Results -->
-        <div class="results">
-          <h3 id="resultsHead"></h3>
-          <ol id="resultsBody"></ol>
-        </div>
+        <!-- Reset & Refresh -->
+        <button id="resetBtn" type="reset">Reset Search 🔃</button>
+        <button id="refreshBtn" type="reset">Random 20 🎲</button>
       </div>
-      <div class="footer">
-        <button id="colourBtn">Light Mode 🌞</button>
+
+      <!-- Results -->
+      <div class="results">
+        <h3 id="resultsHead"></h3>
+        <ol id="resultsBody"></ol>
       </div>
     </div>
 

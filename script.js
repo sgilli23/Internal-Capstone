@@ -92,11 +92,11 @@ function disableBtns() {
 colourBtn.addEventListener(`click`, function (e) {
   if (colourBtn.textContent === `Light Mode 🌞`) {
     colourBtn.textContent = `Dark Mode 🌚`;
-    document.querySelector(`body`).style.backgroundColor = "white";
+    document.querySelector(`.container`).style.backgroundColor = "white";
     document.getElementById(`logo`).style.opacity = 1;
   } else {
     colourBtn.textContent = `Light Mode 🌞`;
-    document.querySelector(`body`).style.backgroundColor = "black";
+    document.querySelector(`.container`).style.backgroundColor = "black";
     document.getElementById(`logo`).style.opacity = 0.7;
   }
 });
